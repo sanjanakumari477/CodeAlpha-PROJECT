@@ -16,6 +16,7 @@ for data in soup.find_all("div", class_="quote"):
     authors.append(data.find("small", class_="author").text)
     tags_list.append(", ".join(tag.text for tag in data.find_all("a", class_="tag")))
 
+
 df = pd.DataFrame({
     "Quote": quotes,
     "Author": authors,
